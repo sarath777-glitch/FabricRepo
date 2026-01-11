@@ -1,0 +1,58 @@
+[
+  {
+    "uniqueIdentifier": "b3e982ee-9073-4d92-a9ea-e7b591b2d133",
+    "payload": {
+      "name": "Stock Dashboard",
+      "description": "Container Description",
+      "type": "kqlQueries"
+    },
+    "type": "container-v1"
+  },
+  {
+    "uniqueIdentifier": "495fdc65-e6d9-40f7-bfba-08160ced7562",
+    "payload": {
+      "name": "symbol",
+      "parentContainer": {
+        "targetUniqueIdentifier": "b3e982ee-9073-4d92-a9ea-e7b591b2d133"
+      },
+      "definition": {
+        "type": "Object"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "98af8ff8-1e0c-4970-bba3-a4f251a2993a",
+    "payload": {
+      "name": "symbol",
+      "parentObject": {
+        "targetUniqueIdentifier": "495fdc65-e6d9-40f7-bfba-08160ced7562"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "b3e982ee-9073-4d92-a9ea-e7b591b2d133"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"3e8318f2-a1de-4a43-b148-7588627effd5\",\"name\":\"IdPartStep\",\"rows\":[{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}],\"kind\":\"TypeAssertion\",\"name\":\"TypeAssertion\"}]}],\"templateId\":\"IdentityPartAttribute\",\"templateVersion\":\"1.2.3\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "3cfe87f8-f3d2-4c96-af9a-e31587151ada",
+    "payload": {
+      "name": "symbol",
+      "parentObject": {
+        "targetUniqueIdentifier": "495fdc65-e6d9-40f7-bfba-08160ced7562"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "b3e982ee-9073-4d92-a9ea-e7b591b2d133"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"86e60a02-c822-4444-9167-975637c3c138\",\"name\":\"IdStructureStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"98af8ff8-1e0c-4970-bba3-a4f251a2993a\"}],\"kind\":\"AttributeReference\",\"name\":\"idPart\",\"type\":\"complex\"}],\"kind\":\"IdPart\",\"name\":\"IdPart\"}]}],\"templateId\":\"IdentityTupleAttribute\",\"templateVersion\":\"1.2.3\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  }
+]

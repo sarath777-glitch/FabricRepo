@@ -1,0 +1,74 @@
+{
+  "schema_version": 67,
+  "tiles": [
+    {
+      "id": "a0cd5d72-79d4-4447-a6ff-fe0b1c1bea5f",
+      "title": "New Tile",
+      "visualType": "table",
+      "pageId": "8a11f13c-c9e1-46ab-975f-229a85ab7e9f",
+      "layout": {
+        "width": 9,
+        "height": 7,
+        "x": 0,
+        "y": 0
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "a1de8a23-1b0a-4450-8c1e-4b3211a4d514"
+      },
+      "visualOptions": {
+        "selectedDataOnLoad": {
+          "all": true,
+          "limit": 10
+        }
+      }
+    }
+  ],
+  "baseQueries": [],
+  "parameters": [
+    {
+      "kind": "duration",
+      "id": "76b1f11e-abb6-4f5c-9582-c23e76ae9c25",
+      "displayName": "Time range",
+      "description": "",
+      "beginVariableName": "_startTime",
+      "endVariableName": "_endTime",
+      "defaultValue": {
+        "kind": "dynamic",
+        "count": 1,
+        "unit": "hours"
+      },
+      "showOnPages": {
+        "kind": "all"
+      }
+    }
+  ],
+  "dataSources": [
+    {
+      "id": "30b790b2-56d6-4be9-8317-45918559a22c",
+      "kind": "kusto-trident",
+      "scopeId": "kusto-trident",
+      "clusterUri": "",
+      "database": "c445468e-5d77-b651-49b8-e190199d8169",
+      "name": "RealEventhouse",
+      "workspace": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "pages": [
+    {
+      "name": "Page 1",
+      "id": "8a11f13c-c9e1-46ab-975f-229a85ab7e9f"
+    }
+  ],
+  "queries": [
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "30b790b2-56d6-4be9-8317-45918559a22c"
+      },
+      "text": "stock\n| where [\"time\"] > ago(5m)\n| summarize avgPrice = avg(todecimal(bidPrice)) by symbol\n| project symbol, avgPrice",
+      "id": "a1de8a23-1b0a-4450-8c1e-4b3211a4d514",
+      "usedVariables": []
+    }
+  ]
+}
