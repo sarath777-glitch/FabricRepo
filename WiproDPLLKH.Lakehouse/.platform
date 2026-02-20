@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "WiproDPLLKH"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1191991e-0820-84c0-4192-4424fba11a4f"
+  }
+}
